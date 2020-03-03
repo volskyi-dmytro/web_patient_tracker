@@ -3,7 +3,7 @@
 
 <html>
 <head>
-     <title>List Patients </title>
+     <title>List of the Patients </title>
 
 </head>
 
