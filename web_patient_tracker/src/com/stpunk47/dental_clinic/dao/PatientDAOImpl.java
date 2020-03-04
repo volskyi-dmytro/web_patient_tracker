@@ -19,7 +19,6 @@ public class PatientDAOImpl implements PatientDAO {
 	private SessionFactory sessionFactory;
 	
 	@Override
-	@Transactional
 	public List<Patient> getPatients() {
 		//get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
