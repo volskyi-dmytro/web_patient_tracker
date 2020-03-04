@@ -34,5 +34,17 @@ public class PatientController {
 		
 		return "list-patients";
 	}
+	
+	@GetMapping("/showFormForAdd")
+	public String showFormForAdd(Model theModel ) {
+		return "patient-form";
+	}
+	
+	
+	
+	
+	
+	
+	
 
 }
