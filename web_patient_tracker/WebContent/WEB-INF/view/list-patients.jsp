@@ -49,6 +49,14 @@
                           <c:url var="updateLink" value="/patient/showFormForUpdate">
                              <c:param name="patientId" value="${tempPatient.id}"/>
                           </c:url>
+                          
+                          <!-- creating variable with delete-link for each patient
+                           -->
+                          <c:url var="deleteLink" value="/patient/delete">
+                          
+                          
+                             <c:param name="patientId" value="${tempPatient.id}"/>
+                          </c:url>
                            
                            <tr>
                                <td>${tempPatient.firstName} </td>
@@ -57,6 +65,8 @@
                                <td>${tempPatient.email} </td>
                                <td>
                                  <a href="${updateLink}">Update</a> 
+                                 |
+                                 <a href="${deleteLink}">Delete</a>
                                </td>
                            
                            </tr>
