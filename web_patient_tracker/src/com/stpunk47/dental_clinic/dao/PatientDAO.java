@@ -9,4 +9,6 @@ public interface PatientDAO {
 
 	public void savePatient(Patient thePatient);
 
+	public Patient getPatient(int theId);
+
 }
