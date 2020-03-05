@@ -13,4 +13,6 @@ public interface PatientDAO {
 
 	public void deletePatient(int theId);
 
+	public List<Patient> searchPatients(String theSearchName);
+
 }

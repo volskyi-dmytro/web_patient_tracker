@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.stpunk47.dental_clinic.entity.Patient;
 import com.stpunk47.dental_clinic.service.PatientService;
+import com.sun.javafx.binding.StringFormatter;
 
 @Controller
 @RequestMapping("/patient")
@@ -79,6 +80,20 @@ public class PatientController {
 		
 		
 		return "redirect:/patient/list";
+	}
+	
+	@GetMapping("/search")
+	public String searchPatients(@RequestParam("theSearchName") 
+	                          String theSearchName, Model theModel ) {
+		//search patients
+		List<Patient> thePatients =
+				patientService.searchPatients(theSearchName);
+		
+		//add patients to the model
+		theModel.addAttribute("patients",thePatients);
+		
+		return "list-patients";
+		
 	}
 	
 	

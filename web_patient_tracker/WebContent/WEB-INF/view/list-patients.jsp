@@ -1,4 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
+
 <!DOCTYPE html>
 
 <html>
@@ -18,7 +21,8 @@
 
    <div id="wrapper">
       <div id="header" >
-          <h2>PRM - Patient Relationship Manager </h2>
+          
+          <a href="${pageContext.request.contextPath}/patient/list"><h2>PRM - Patient Relationship Manager </h2></a>
       
       </div>    
    </div>
@@ -26,10 +30,21 @@
    <div id="container">
         <div id="content">
             
+               <form:form action="search" method="GET">
+                Search patient: <input type="text" name="theSearchName" />
+                
+                <input type="submit" value="Search" class="add-button" />
+            </form:form>
+               
                <input type="button" value="Add Patient" 
                    onclick="window.location.href='showFormForAdd';return false;"
                    class="add-button"
                />
+               
+               <div class="map-responsive">
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2524.7868788814735!2d24.15547771595164!3d50.742441574162875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4724f393fcd2e67f%3A0xb56b8ef46a052eab!2sDental%20office%2032%20Pearls!5e0!3m2!1sru!2sua!4v1583431368584!5m2!1sru!2sua" width="200" height="200" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+               </div>
+               
             
               
                 <table>

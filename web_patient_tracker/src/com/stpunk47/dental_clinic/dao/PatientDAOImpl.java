@@ -75,4 +75,21 @@ public class PatientDAOImpl implements PatientDAO {
 		
 	}
 
+	@Override
+	public List<Patient> searchPatients(String theSearchName) {
+		Session currentSession = sessionFactory.getCurrentSession();
+		Query theQuery = null;
+		
+		if(theSearchName!=null&&theSearchName.trim().length()>0) {
+			theQuery=currentSession.createQuery("from Patient where lower(firstName) like :theName or lower(lastName) like :theName",Patient.class);
+			theQuery.setParameter("theName", "%" + theSearchName.toLowerCase()+"%");
+		} else {
+			theQuery=currentSession.createQuery("from Patient",Patient.class);
+		}
+		List<Patient> patients = theQuery.getResultList();
+		
+		
+		return patients;
+	}
+
 }

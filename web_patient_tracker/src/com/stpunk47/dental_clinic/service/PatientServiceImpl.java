@@ -44,4 +44,11 @@ public class PatientServiceImpl implements PatientService {
 		
 	}
 
+	@Override
+	@Transactional
+	public List<Patient> searchPatients(String theSearchName) {
+		
+		return patientDAO.searchPatients(theSearchName);
+	}
+
 }

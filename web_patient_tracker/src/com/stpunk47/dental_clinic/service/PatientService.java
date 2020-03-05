@@ -13,4 +13,6 @@ public interface PatientService {
 
 	public void deletePatient(int theId);
 
+	public List<Patient> searchPatients(String theSearchName);
+
 }
