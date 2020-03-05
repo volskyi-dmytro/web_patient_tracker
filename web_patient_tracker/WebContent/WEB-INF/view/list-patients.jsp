@@ -46,7 +46,7 @@
                           
                           <!-- creating variable with update-link for each patient
                            -->
-                          <c:url var="updateLink" value="/customer/showFormForUpdate">
+                          <c:url var="updateLink" value="/patient/showFormForUpdate">
                              <c:param name="patientId" value="${tempPatient.id}"/>
                           </c:url>
                            

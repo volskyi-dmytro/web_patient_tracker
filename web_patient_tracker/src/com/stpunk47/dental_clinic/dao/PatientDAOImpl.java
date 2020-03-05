@@ -45,8 +45,8 @@ public class PatientDAOImpl implements PatientDAO {
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		
-		//save the patient-info to db
-		currentSession.save(thePatient);
+		//save/update the patient-info to db
+		currentSession.saveOrUpdate(thePatient);
 	}
 
 	@Override

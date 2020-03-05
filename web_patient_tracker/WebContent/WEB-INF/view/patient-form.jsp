@@ -31,7 +31,9 @@
          
             <form:form action="savePatient" modelAttribute="patient" method="POST"> 
             
-           
+            <!-- need to associate this data with patient id -->
+            <form:hidden path="id"/>
+            
             
             <table>
                <tbody>
