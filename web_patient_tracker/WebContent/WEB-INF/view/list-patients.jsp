@@ -38,16 +38,26 @@
                        <th>Last Name</th>
                        <th>Phone number</th>
                        <th>Email</th>
+                       <th>Action</th>
                         
                     </tr>
                     
                     <c:forEach var="tempPatient" items="${patients}"> 
+                          
+                          <!-- creating variable with update-link for each patient
+                           -->
+                          <c:url var="updateLink" value="/customer/showFormForUpdate">
+                             <c:param name="patientId" value="${tempPatient.id}"/>
+                          </c:url>
                            
                            <tr>
                                <td>${tempPatient.firstName} </td>
                                <td>${tempPatient.lastName} </td>
                                <td>${tempPatient.phoneNumber} </td>
                                <td>${tempPatient.email} </td>
+                               <td>
+                                 <a href="${updateLink}">Update</a> 
+                               </td>
                            
                            </tr>
                     
