@@ -27,7 +27,8 @@ public class PatientDAOImpl implements PatientDAO {
 		//create a query
 		
 		Query<Patient> theQuery = 
-				currentSession.createQuery("from Patient",Patient.class);
+				currentSession.createQuery("from Patient order by lastName",
+						Patient.class);
 				
 		
 		//execute a query and get result list
