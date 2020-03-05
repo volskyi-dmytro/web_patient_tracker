@@ -11,4 +11,6 @@ public interface PatientDAO {
 
 	public Patient getPatient(int theId);
 
+	public void deletePatient(int theId);
+
 }

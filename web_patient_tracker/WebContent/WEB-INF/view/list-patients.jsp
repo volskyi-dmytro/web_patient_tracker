@@ -52,9 +52,7 @@
                           
                           <!-- creating variable with delete-link for each patient
                            -->
-                          <c:url var="deleteLink" value="/patient/delete">
-                          
-                          
+                          <c:url var="deleteLink" value="/patient/delete">                                                
                              <c:param name="patientId" value="${tempPatient.id}"/>
                           </c:url>
                            
@@ -66,7 +64,8 @@
                                <td>
                                  <a href="${updateLink}">Update</a> 
                                  |
-                                 <a href="${deleteLink}">Delete</a>
+                                 <a href="${deleteLink}"
+                                 onclick="if(!(confirm('Are you sure to delete this patient?'))) return false">Delete</a>
                                </td>
                            
                            </tr>

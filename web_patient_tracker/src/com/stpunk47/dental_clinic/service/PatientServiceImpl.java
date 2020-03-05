@@ -37,4 +37,11 @@ public class PatientServiceImpl implements PatientService {
 		return patientDAO.getPatient(theId);
 	}
 
+	@Override
+	@Transactional
+	public void deletePatient(int theId) {
+		patientDAO.deletePatient(theId);
+		
+	}
+
 }
