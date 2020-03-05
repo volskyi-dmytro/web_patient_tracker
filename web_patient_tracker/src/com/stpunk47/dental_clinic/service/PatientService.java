@@ -7,4 +7,6 @@ import com.stpunk47.dental_clinic.entity.Patient;
 public interface PatientService {
 	public List<Patient> getPatients();
 
+	public void savePatient(Patient thePatient);
+
 }

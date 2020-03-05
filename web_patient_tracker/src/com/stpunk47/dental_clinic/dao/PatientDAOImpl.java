@@ -38,4 +38,14 @@ public class PatientDAOImpl implements PatientDAO {
 		return patients;
 	}
 
+	@Override
+	public void savePatient(Patient thePatient) {
+		//get current hibernate session
+		Session currentSession = sessionFactory.getCurrentSession();
+		
+		
+		//save the patient-info to db
+		currentSession.save(thePatient);
+	}
+
 }

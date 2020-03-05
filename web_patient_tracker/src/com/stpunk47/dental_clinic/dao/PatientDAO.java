@@ -7,4 +7,6 @@ public interface PatientDAO {
 	
 	public List<Patient> getPatients();
 
+	public void savePatient(Patient thePatient);
+
 }
