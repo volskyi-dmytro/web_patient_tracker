@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.stpunk47.dental_clinic.dao.PatientDAO;
+
 import com.stpunk47.dental_clinic.entity.Patient;
 import com.stpunk47.dental_clinic.service.PatientService;
 
@@ -37,6 +37,13 @@ public class PatientController {
 	
 	@GetMapping("/showFormForAdd")
 	public String showFormForAdd(Model theModel ) {
+		//create model attribute to bind form data
+		
+		Patient thePatient = new Patient();
+		
+		theModel.addAttribute("patient", thePatient);
+		
+		
 		return "patient-form";
 	}
 	
